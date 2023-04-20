@@ -3,7 +3,7 @@
  * main - Entry point
  *
  * Description: 'the program's description'
- * @main: describe the main
+ * main: describe the main
  *
  * Return: Always 0 (Success)
  */
