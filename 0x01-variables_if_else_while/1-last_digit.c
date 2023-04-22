@@ -1,7 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-#include <limits.h> 
 /**
  * main - Entry point
  * Description: 'the program's description'
