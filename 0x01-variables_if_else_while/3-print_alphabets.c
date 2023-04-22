@@ -4,7 +4,7 @@
  * main - Entry point
  * Description: 'Alphabet'
  * c,z: describe the chars
- * Return: Always (EOF) (Success)
+ * Return: Always (0) (Success)
  */
 int main(void)
 {
@@ -21,5 +21,5 @@ char x;
 	c++;
 }
 	putchar('\n');
-	return (EOF);
+	return (0);
 }
