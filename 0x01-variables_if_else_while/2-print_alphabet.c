@@ -14,5 +14,6 @@ char c;
 {	putchar(c);
 	c++;
 }
+	putchar('\n');
 	return (EOF);
 }
