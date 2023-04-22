@@ -13,9 +13,16 @@ char c;
 	while (c <= 'z')
 {
 	if (c != 'e' || c != 'q')
+{
 	putchar(c);
-}
 	c++;
+	continue;
+}
+	else
+{
+	c++;
+}
+}
 	putchar('\n');
 	return (0);
 }
