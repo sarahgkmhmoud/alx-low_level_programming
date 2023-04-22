@@ -12,14 +12,14 @@ char c;
 	c = 'a';
 	while (c <= 'z')
 {
-	if (c != 'e' || c != 'q')
+	if (c == 'e' || c == 'q')
 {
-	putchar(c);
 	c++;
 	continue;
 }
 	else
 {
+	putchar(c);
 	c++;
 }
 }
