@@ -1,2 +1,3 @@
 #!/bin/bash
-gcc -S -mtune=intel  $CFILE
+gcc -S -masm=intel -Og -fverbose-asm $CFILE
+
