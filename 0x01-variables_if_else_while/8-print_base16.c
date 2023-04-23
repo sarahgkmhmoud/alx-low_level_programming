@@ -8,11 +8,19 @@
  */
 int main(void)
 {
+char str;
 int c;
-	c = '0';
-	while (c <= '9')
-{	putchar(c);
+c = 48;
+str = 'a';
+	while (c <= 57)
+{
+	putchar(c);
 	c++;
+}
+	while (str <= 'f')
+{
+	putchar(str);
+	str++;
 }
 	putchar('\n');
 	return (0);
