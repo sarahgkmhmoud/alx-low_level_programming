@@ -3,28 +3,12 @@
 int main(void)
 {
     int x = 0;
-    int i;
+    int y;
     while (x < 100)
     {
 	    
-	i = 48;
-	while (i <= 57)
-{
-	if ('i' != (x/10))
-	{
-	putchar((x/10)+'0');
-	putchar((x%10)+'0');
-	putchar(i);
-	i++;
-	if (x < 99)
-        {
-            putchar(',');
-            putchar(' ');
-        }
-	}
-	else
-	i++;
-}
+	y = (x/10)*(x%10);
+	putchar(y+'0');
         x++;
     }
     putchar('\n');
