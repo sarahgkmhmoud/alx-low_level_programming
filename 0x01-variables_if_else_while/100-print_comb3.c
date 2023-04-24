@@ -10,16 +10,21 @@ int main(void)
 {
 int i;
 i = 0;
-	while (i < 100)
+	while (i < 99)
 {
 	if ((i / 10) != (i % 10) && (i / 10) < (i % 10))
 {
 	putchar((i / 10) + '0');
 	putchar((i % 10) + '0');
+	i++;
+	if (i < 89)
+{
 	putchar(',');
 	putchar(' ');
-	i++;
 }
+
+}
+
 	else
 	i++;
 }
