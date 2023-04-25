@@ -6,7 +6,7 @@
  */
 void print_alphabet(void)
 {
-	_putchar('a');
+	putchar('a');
 	putchar('b');
 	putchar('c');
 	putchar('d');
@@ -32,5 +32,5 @@ void print_alphabet(void)
 	putchar('x');
 	putchar('y');
 	putchar('z');
-	_putchar('\n');
+	putchar('\n');
 }
