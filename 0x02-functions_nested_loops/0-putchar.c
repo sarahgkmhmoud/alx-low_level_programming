@@ -3,7 +3,7 @@
 /**
  *  main - Entry point*
  * Description: ' prints _putchar, followed by a new line.'
- * @parameter: describe the parameter
+ * @void: describe the main
  * Return: Always 0 (Success)
  */
 int main(void)
