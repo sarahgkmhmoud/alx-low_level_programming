@@ -10,10 +10,10 @@ int main(void)
 {
 int i, x;
 x = 0;
-	while (x < 99)
+	while (x < 100)
 {
-	i = 0;
-	while (i <= 99)
+	i = x;
+	while (i < 100)
 {
 	if (i != x)
 {
