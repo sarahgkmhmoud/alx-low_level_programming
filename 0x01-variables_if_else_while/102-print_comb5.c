@@ -23,7 +23,7 @@ x = 0;
 	putchar((i / 10) + '0');
 	putchar((i % 10) + '0');
 	i++;
-	if (x < 99)
+	if (x < 98)
 {
 	putchar(',');
 	putchar(' ');
