@@ -15,7 +15,7 @@ x = 0;
 	while (i <= 9)
 {
 	n = i * x;
-	if ((n / 10) != 0)
+	if (n != 0)
 {
 	_putchar((n / 10) + '0');
 	_putchar((n % 10) + '0');
