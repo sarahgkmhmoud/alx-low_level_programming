@@ -9,16 +9,11 @@ int main(void)
 {
 int n;
 int sum;
-int x = 0;
-int y = 0;
 for (n = 1023; n >= 0; n--)
 {
-	if (n % 3 == 0)
-	x = x + n;
-	if (n % 5 == 0)
-	y = y + n;
+	if ((n % 3 == 0) || (n % 5 == 0))
+	sum = sum + n;
 }
-	sum = x + y;
 	printf("%d\n", sum);
 	return (0);
 }
