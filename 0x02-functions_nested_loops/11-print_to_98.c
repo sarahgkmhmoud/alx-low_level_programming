@@ -4,28 +4,27 @@
  * print_to_98 - writes the character c to stdout
  * @n: The character to print
  *
- * Return: On success i
  */
 void print_to_98(int n)
 {
-	int i = n;
-
-	if (i <= 98)
+	if (n <= 98)
 {
-	while (i <= 98)
+	for (; n <= 98; n++)
 {
-	printf("%d, ", i);
-	i++;
+	if (n != 98)
+	printf("%d, ", n);
 }
-	_putchar('\n');
+	printf("98");
+	printf("\n");
 }
-	else
+	else if (n > 98)
 {
-	while (i >= 98)
+	for (; n > 98; n--)
 {
-	printf("%d, ", i);
-	i--;
+	if (n != 98)
+	printf("%d, ", n);
 }
-	_putchar('\n');
+	printf("98");
+	printf("\n");
 }
 }
