@@ -11,30 +11,28 @@ int i, x, n;
 x = 0;
 	while (x <= 9)
 {
-	i = 0;
+	i = 1;
+	_putchar('0');
 	while (i <= 9)
 {
 	n = i * x;
-	if (n != 0)
-{
-	_putchar((n / 10) + '0');
-	_putchar((n % 10) + '0');
-}
-	else
-{
-	_putchar(' ');
-	_putchar((n % 10) + '0');
-}
-	if (i < 9)
+	if (n < 10)
 {
 	_putchar(',');
 	_putchar(' ');
+	_putchar(' ');
+	_putchar((n % 10) + '0');
 }
 	else
-	_putchar('\n');
-
+{
+	_putchar(',');
+	_putchar(' ');
+	_putchar((n / 10) + '0');
+	_putchar((n % 10) + '0');
+}
 	i++;
 }
+	_putchar('\n');
 	x++;
 }
 }
