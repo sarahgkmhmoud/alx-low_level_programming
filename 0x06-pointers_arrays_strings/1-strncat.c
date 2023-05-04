@@ -23,6 +23,6 @@ char *_strncat(char *dest, char *src, int n)
 		return (dest);
 }
 		else
-		return (dest);
+		_putchar('\n');
 
 }
