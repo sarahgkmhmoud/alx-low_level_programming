@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include"main.h"
 /**
- *__strcmp - write  a function that concatenates two strings.
- * @dest: Describe the string 1
- * @src: Describe the string 2
+ *_strcmp  - write  a function that concatenates two strings.
+ * @s1: Describe the string 1
+ * @s2: Describe the string 2
  * Return: Always 0 (Success)
  */
 int _strcmp(char *s1, char *s2)
@@ -27,5 +27,5 @@ int _strcmp(char *s1, char *s2)
 	break;
 }
 }
-	return(n);
+	return (n);
 }
