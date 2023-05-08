@@ -7,17 +7,15 @@
 
 int main(void)
 {
-	int i;
+/*	int i;*/
 
 	printf("Infinite loop incoming :(\n");
 
-	i = 0;
-/**
-*Dwcription: cancel wil loop while (i < 10)
-*@paramertr - to print {
-*putchar(i);
-*}
-*/
+/*	i = 0;*/
+/*Dwcription: cancel wil loop while (i < 10)*/
+/*@paramertr - to print {*/
+/*putchar(i);*/
+/*}*/
 	printf("Infinite loop avoided! \\o/\n");
 
 	return (0);
