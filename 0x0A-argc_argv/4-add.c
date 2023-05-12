@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include <string.h>
 #include<stdlib.h>
 /**
  *main - descripe the main function
@@ -9,24 +10,36 @@
 int main(int argc, char *argv[])
 {
 	int i, sum;
+	int digit = 0;
+
+	sum = 0;
+	i = 1;
 
 	if (argc > 1)
 	{
-	for (i = 1; i < argc; i++)
-	if (argv[i] >
+	while (i < argc && digit == 0)
+	{
+	if (*argv[i] >= '0' && *argv[i] <= '9')
+	{
+	digit = 0;
 	sum += atoi(argv[i]);
-	}
-
-	if 
-
-	int number2 = atoi(argv[2]);
-
-	printf("%d\n", number1 * number2);
-	return (0);
 	}
 	else
 	{
+	digit = 1;
+	break;
+	}
+	i++;
+	}
+if (digit == 1)
+{
 	printf("Error\n");
 	return (1);
+}
+	else
+	printf("%d\n", sum);
 	}
+	else if (argc == 1)
+	printf("0\n");
+	return (0);
 }
