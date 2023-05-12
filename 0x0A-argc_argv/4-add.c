@@ -39,7 +39,8 @@ if (digit == 1)
 	else
 	printf("%d\n", sum);
 	}
-	else if (argc == 1)
+
+	else
 	printf("0\n");
 	return (0);
 }
