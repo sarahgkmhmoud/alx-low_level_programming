@@ -6,6 +6,6 @@
  *@accept : discripe the array
  *return : 0 always sucess
  */
-int _atoi(char *s);
+int _atoi(char *s)
 {
 }
