@@ -4,7 +4,7 @@
  *main - descripe the main function
  *@argc : decript the count
  *@argv : desribe the array
- *Return: 0 always success
+ *Return: 0 always success and 1 Failure
  */
 int main(int argc, char *argv[])
 {
