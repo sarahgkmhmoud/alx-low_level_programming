@@ -8,9 +8,17 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc > 1 || argc < 4)
+	int i, sum;
+
+	if (argc > 1)
 	{
-	int number1 = atoi(argv[1]);
+	for (i = 1; i < argc; i++)
+	if (argv[i] >
+	sum += atoi(argv[i]);
+	}
+
+	if 
+
 	int number2 = atoi(argv[2]);
 
 	printf("%d\n", number1 * number2);
