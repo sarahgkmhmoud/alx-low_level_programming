@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include <string.h>
 #include<stdlib.h>
-int mincoin(int coin[], int m, int v);
+#include <limits.h>
+int mincoin(int coin[], int m, long v);
 /**
  *main - descripe the main function
  *@argc : decript the count
@@ -10,7 +11,7 @@ int mincoin(int coin[], int m, int v);
  */
 int main(int argc, char *argv[])
 {
-	int cent;
+	long cent;
 	int chang;
 	int coin[5] = {25, 10, 5, 2, 1};
 
@@ -34,16 +35,19 @@ int main(int argc, char *argv[])
  *@v: describe the value
  *Return: (counter) always sucess
  */
-int mincoin(int coin[], int  m, int v)
+int mincoin(int coin[], int  m, long v)
 {
-int i, counter;
+int i;
+int counter;
 
-if (v == 0)
+counter = INT_MAX;
+if (v <= 0)
 	return (0);
 for (i = 0; i < m; i++)
 {
 	if (coin[i] <= v)
 	{
+	if ((mincoin(coin, m, v - coin[i])) != INT_MAX && 1 + (mincoin(coin, m, v - coin[i])) < counter)
 	counter = 1 + (mincoin(coin, m, v - coin[i]));
 	break;
 	}
