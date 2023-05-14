@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include <string.h>
 #include<stdlib.h>
-#include <limits.h>
 int mincoin(int coin[], int m, int v);
 /**
  *main - descripe the main function
@@ -21,46 +20,33 @@ int main(int argc, char *argv[])
 	printf("Error\n");
 		return (1);
 }
-	if (cent < 0)
-{
-	printf("0\n");
-	return (0);
-}
+
 	chang = mincoin(coin, 5, cent);
 	printf("%d\n", chang);
 	return (0);
 }
 
 
-/*
- * mincoin - Describe the main coin
- *@coin[] - describe the given coin
- *@m - desctibe the number of coins
- *@v - describe the value
- *Return : table[v] always sucess
+/**
+ *mincoin - Describe the main coin
+ *@coin: describe the given coin
+ *@m: desctibe the number of coins
+ *@v: describe the value
+ *Return: (counter) always sucess
  */
 int mincoin(int coin[], int  m, int v)
 {
+int i, counter;
 
-int table[v + 1];
-int i, j;
-int remain;
-
-table[0] = 0;
-
-for (i = 1; i <= v; i++)
-table[i] = INT_MAX;
-
-	for (i = 1; i <= v; i++)
+if (v == 0)
+	return (0);
+for (i = 0; i < m; i++)
+{
+	if (coin[i] <= v)
 	{
-		for (j = 0; j < m; j++)
-		if (coin[j] <= i)
-	{
-		remain = table[i - coin[j]];
-		if (remain != INT_MAX && (remain + 1) < table [i])
-		table[i] = remain + 1;
+	counter = 1 + (mincoin(coin, m, v - coin[i]));
+	break;
 	}
-	}
-	return (table[v]);
 }
-
+return (counter);
+}
