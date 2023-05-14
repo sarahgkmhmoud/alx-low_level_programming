@@ -40,7 +40,7 @@ int mincoin(int coin[], int  m, int v)
 int i;
 int counter;
 
-if (v == 0)
+if (v <= 0)
 	return (0);
 for (i = 0; i < m; i++)
 {
