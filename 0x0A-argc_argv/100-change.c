@@ -9,7 +9,7 @@ int mincoin(int coin[], int m, int v);
  *@argv : desribe the array
  *Return: 0 always success and 1 Failure
  */
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 	int cent;
 	int chang;
