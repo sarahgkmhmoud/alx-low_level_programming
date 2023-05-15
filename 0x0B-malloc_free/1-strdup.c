@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include"main.h"
 #include <stdlib.h>
+#include<limits.h>
 /**
  *_strdup - contains a copy of the string given
  *@str: Describe the array
@@ -17,7 +18,7 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	a =  malloc(sizeof(char));
+	a =  malloc(INT_MAX);
 	if (a == NULL)
 	{
 		return (NULL);
