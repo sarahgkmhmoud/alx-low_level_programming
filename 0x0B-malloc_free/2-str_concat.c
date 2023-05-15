@@ -11,17 +11,16 @@ char *str_concat(char *s1, char *s2)
 {
 	int j, i;
 	char *a;
-	int n, m, s;
+	int n;
 
-	n = sizeof(s1);
-	m = sizeof(s2);
-	s = n + m;
+	n = sizeof(s2) +  sizeof(s1);
 
-	a =  malloc(sizeof(*a) * sizeof(s));
 	if (s1 == NULL && s2 == NULL)
 	{
 		return (NULL);
 	}
+	
+	a =  malloc(sizeof(n));
 	for (j = 0; s1[j] != '\0'; j++)
 	{
 		a[j] = s1[j];
