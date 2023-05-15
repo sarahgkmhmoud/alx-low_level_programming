@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include"main.h"
 #include <stdlib.h>
+#include<limits.h>
 /**
  *create_array - creates an array of chars
  *@size: Describe the integer
@@ -16,7 +17,11 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 
-	a = malloc(sizeof(*a) * size);
+
+	a =  malloc(INT_MAX);
+	if (a == NULL)
+		return (NULL);
+
 		for (i = 0; i < size; i++)
 		*(a + i) = c;
 	return (a);
