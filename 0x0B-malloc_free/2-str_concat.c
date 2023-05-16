@@ -14,19 +14,13 @@ char *str_concat(char *s1, char *s2)
 	char *a;
 	int n;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 	n = strlen(s1) + strlen(s2) + 1;
 
-
 	a = malloc(sizeof(*a) * n);
-	if (s1[0] == 'N' && s1[1] == 'U' && s1[2] == 'L' && s1[3] == 'L')
-		a = s2;
-	if (s2[0] == 'N' && s2[1] == 'U' && s2[2] == 'L' && s2[3] == 'L')
-		a = s1;
-	if (s1[0] == 'N' && s1[1] == 'U' && s1[2] == 'L' && s1[3] == 'L')
-	{
-	if (s2[0] == 'N' && s2[1] == 'U' && s2[2] == 'L' && s2[3] == 'L')
-	a = '\0';
-	}
 
 	if (a == NULL)
 	{
