@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, j, sum;
 	int digit = 0;
 
 	sum = 0;
@@ -19,27 +19,33 @@ int main(int argc, char *argv[])
 	{
 	while (i < argc && digit == 0)
 	{
-	if (*argv[i] >= '0' && *argv[i] <= '9')
+	for (j = 0; argv[i][j] != '\0'; j++)
 	{
-	digit = 0;
-	sum += atoi(argv[i]);
-	}
-	else
+	if (argv[i][j] >= '0' && argv[i][j] <= '9')
 	{
-	digit = 1;
-	break;
+		digit = 0;
 	}
-	i++;
+				else
+					break;
+			}
+		if (digit == 0)
+		{
+			sum += atoi(argv[i]);
+		}
+		else
+		{
+			break;
+		}
+		i++;
 	}
-if (digit == 1)
+	}
+	if (digit == 1)
 {
 	printf("Error\n");
 	return (1);
 }
-	else
+	else if (digit == 0)
 	printf("%d\n", sum);
-	}
-
 	else
 	printf("0\n");
 	return (0);
