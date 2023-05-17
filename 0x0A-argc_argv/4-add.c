@@ -14,7 +14,6 @@ int main(int argc, char *argv[])
 
 	sum = 0;
 	i = 1;
-
 	if (argc > 1)
 	{
 	while (i < argc && digit == 0)
@@ -26,16 +25,17 @@ int main(int argc, char *argv[])
 		digit = 0;
 	}
 				else
+				{
+					digit = 1;
 					break;
+				}
 			}
 		if (digit == 0)
 		{
 			sum += atoi(argv[i]);
 		}
 		else
-		{
 			break;
-		}
 		i++;
 	}
 	}
