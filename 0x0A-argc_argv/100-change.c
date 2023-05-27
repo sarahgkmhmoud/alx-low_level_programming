@@ -14,14 +14,13 @@ int main(int argc, char **argv)
 	int cent;
 	int chang;
 	int coin[5] = {25, 10, 5, 2, 1};
-
 	cent = atoi(argv[argc - 1]);
 	if (argc == 1)
 {
 	printf("Error\n");
 		return (1);
 }
-
+	chang = malloc INT_MAX;
 	chang = mincoin(coin, 5, cent);
 	printf("%d\n", chang);
 	return (0);
