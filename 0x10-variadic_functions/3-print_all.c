@@ -40,9 +40,11 @@ switch(format[i])
 	}
 	case 's':
 	{
-	s = va_arg(ptr, char*);
+	s =  va_arg(ptr, char*);
+	if (s == NULL)
+	printf("(nil)");
+	else
 	printf("%s", s);
-	break;
 	}
 	}
 	i++;
