@@ -42,9 +42,12 @@ switch(format[i])
 	{
 	s =  va_arg(ptr, char*);
 	if (s == NULL)
+	{
 	printf("(nil)");
-	else
+	break;
+	}
 	printf("%s", s);
+	break;
 	}
 	}
 	i++;
