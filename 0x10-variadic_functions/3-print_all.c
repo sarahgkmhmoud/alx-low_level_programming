@@ -13,7 +13,7 @@ char c, *s;
 double f;
 va_start(ptr, format);
 i = 0;
-while (format != NULL || format[i] != '\0')
+while (format[i] != '\0')
 {
 	switch (format[i])
 	{case 'c':
