@@ -1,12 +1,9 @@
 #include<stdio.h>
 #include<stdarg.h>
-#include <stdlib.h>
 #include"variadic_functions.h"
 /**
  *print_all - print them
  *@format: string of char
- *
- *
  */
 void print_all(const char * const format, ...)
 {
@@ -16,34 +13,25 @@ char c, *s;
 double f;
 va_start(ptr, format);
 i = 0;
-while (format[i] != '\0' && format != NULL)
+while (format != NULL || format[i] != '\0')
 {
-switch(format[i])
-	{
-	case 'c':
-		{
-	c = (char) va_arg(ptr, int);
+	switch (format[i])
+	{case 'c':
+	{c = (char) va_arg(ptr, int);
 	printf("%c", c);
-	break;
-	}
+	break;	}
 	case 'i':
-	{
-	d = va_arg(ptr, int);
+	{d = va_arg(ptr, int);
 	printf("%d", d);
-	break;
-	}
+	break;	}
 	case 'f':
-	{
-	f = va_arg(ptr, double);
+	{f = va_arg(ptr, double);
 	printf("%f", f);
-	break;
-	}
+	break;	}
 	case 's':
-	{
-	s =  va_arg(ptr, char*);
+	{s =  va_arg(ptr, char*);
 	if (s == NULL)
-	{
-	printf("(nil)");
+	{printf("(nil)");
 	break;
 	}
 	printf("%s", s);
