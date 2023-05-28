@@ -16,7 +16,7 @@ char c, *s;
 double f;
 va_start(ptr, format);
 i = 0;
-while (format[i] != '\0')
+while (format[i] != '\0' && format != NULL)
 {
 switch(format[i])
 	{
