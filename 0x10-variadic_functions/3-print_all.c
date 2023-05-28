@@ -18,28 +18,35 @@ va_start(ptr, format);
 i = 0;
 while (format[i] != '\0')
 {
-	if (format[i] == 'c')
+switch(format[i])
 	{
+	case 'c':
+		{
 	c = (char) va_arg(ptr, int);
 	printf("%c", c);
+	break;
 	}
-	else if (*(format + i) == 'i')
+	case 'i':
 	{
 	d = va_arg(ptr, int);
 	printf("%d", d);
+	break;
 	}
-	else if (*(format + i) == 'f')
+	case 'f':
 	{
 	f = va_arg(ptr, double);
 	printf("%f", f);
+	break;
 	}
-	else if (*(format + i) == 's')
+	case 's':
 	{
 	s = va_arg(ptr, char*);
 	printf("%s", s);
+	break;
+	}
 	}
 	i++;
-	if (format[i] == '\0')
+	while (format[i] == '\0')
 		break;
 	if (format[i] == 's' || format[i] == 'i'
 || format[i] == 'c' || format[i] == 'f')
