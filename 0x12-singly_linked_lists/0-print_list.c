@@ -14,7 +14,7 @@ size_t print_list(const list_t *h)
 unsigned int count;
 
 if (h == NULL)
-return (-1);
+return (NULL);
 
 
 count = 0;
