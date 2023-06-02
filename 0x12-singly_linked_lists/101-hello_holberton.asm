@@ -15,5 +15,5 @@ mov eax, 0
 ret
 
 SECTION .data
-msg: db "Hello, Holberton", 10, 0
-len: db "%s", 10, 0
+msg: db "Hello, Holberton", 10
+len: db "%s"
