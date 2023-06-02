@@ -4,10 +4,13 @@ global main
 
 main:
 
+mov eax, 0x4
+mov ebx, 1
 mov esi, msg
 mov edi, len
 mov eax, 0
 call printf
+
 mov eax, 0
 ret
 
