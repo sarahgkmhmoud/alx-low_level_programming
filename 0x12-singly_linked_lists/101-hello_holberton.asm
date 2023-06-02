@@ -1,15 +1,16 @@
-section .text
+SECTION .text
 extern printf
 global main
-main:
-mov edx, len
-mov ecx, msg
-mov ebx, 1
-mov eax, 4
-int 0x80
-mov eax, 1
-int 0x80
 
-section .data
-msg db "Hello, Holberton", 10
-len equ $ -msg, 
+main:
+
+mov esi, msg
+mov edi, len
+mov eax, 0
+call printf
+mov eax, 0
+ret
+
+SECTION .data
+msg: db "Hello, Holberton", 10, 0
+len: db "%s", 10, 0
