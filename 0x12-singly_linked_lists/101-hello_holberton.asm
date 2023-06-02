@@ -4,14 +4,14 @@ global main
 
 main:
 
-mov eax, 0x4
-mov ebx, 1
+push rbp
 mov edi, len
 mov esi, msg
-mov eax, 0
+mov rax, 0
 call printf
 
-mov eax, 0
+mov rbp
+mov rax, 0
 ret
 
 SECTION .data
