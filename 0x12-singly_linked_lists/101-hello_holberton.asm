@@ -6,8 +6,8 @@ main:
 
 mov eax, 0x4
 mov ebx, 1
-mov esi, msg
 mov edi, len
+mov esi, msg
 mov eax, 0
 call printf
 
