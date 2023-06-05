@@ -3,21 +3,20 @@
 #include <string.h>
 #include"lists.h"
 /**
-* free_listint - free node
+*free_listint2 - free node
 *@head:pointer to point to headpointer
 *Descrption: print the data
 */
 void free_listint2(listint_t **head)
 {
-	listint_t **tmp;
-	while(*head!= NULL)
+	listint_t *tmp;
+
+	while (*head !=  NULL)
 {
-	
-	tmp =&(* head)->next;
-	free(*head);
-	*head = NULL;
-	head = tmp;
 
+	tmp = *head;
+	*head = tmp->next;
+	free(tmp);
 }
-
+*head = NULL;
 }
