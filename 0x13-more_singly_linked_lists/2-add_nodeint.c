@@ -5,7 +5,7 @@
 /**
 *add_nodeint - add node
 *@head:pointer to point to headpointer
-*@int: string represent the node date
+*@n: string represent the node date
 *Descrption: print the data
 *Return: "(*header) always success
 */

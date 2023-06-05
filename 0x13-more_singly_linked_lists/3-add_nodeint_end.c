@@ -3,11 +3,11 @@
 #include <string.h>
 #include"lists.h"
 /**
-*add_node_end - add node
+*add_nodeint_end - add node
 *@head:pointer to point to headpointer
 *@n: integer represent the node date
 *Descrption: print the data
-*Return: "(*header) always success
+*Return: (*head) always success
 */
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
@@ -32,5 +32,5 @@ if (*head != NULL)
 else
 *head = tmp;
 
-return (tmp);
+return (*head);
 }
