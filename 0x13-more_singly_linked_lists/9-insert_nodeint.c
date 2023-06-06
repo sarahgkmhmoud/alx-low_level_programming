@@ -39,5 +39,5 @@ if (idx == 0 && tmp == NULL)
 	tmp->next = new;
 
 
-return (new);
+return (*head);
 }
