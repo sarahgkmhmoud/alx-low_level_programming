@@ -22,6 +22,9 @@ if (head == NULL || *head == NULL)
 }
 if (index == 0)
 {
+	if (*head == NULL)
+		return (-1);
+
 	*head = curr->next;
 	free(curr);
 	curr = NULL;
@@ -30,6 +33,9 @@ else
 {
 while (index != 0)
 {
+	if (*head == NULL)
+		return(-1);
+
 	prev = curr;
 	curr = curr->next;
 	index--;
