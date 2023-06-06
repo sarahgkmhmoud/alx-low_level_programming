@@ -30,10 +30,10 @@ if (idx == 0 && tmp == NULL)
 }
 	for (i = 1; i < idx && tmp != NULL; i++)
 	{
+	if (tmp == NULL || tmp->next == NULL)
+		return (NULL);
 	tmp = tmp->next;
 	}
-	if (i < idx || tmp == NULL)
-		return (NULL);
 
 	new->next = tmp->next;
 	tmp->next = new;
