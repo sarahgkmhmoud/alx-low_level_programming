@@ -28,7 +28,7 @@ if (*head != NULL)
 	{
 	tmp = tmp->next;
 	}
-	if (i < idx)
+	if (i < idx || tmp->next == NULL)
 		return (NULL);
 
 	new->next = tmp->next;
