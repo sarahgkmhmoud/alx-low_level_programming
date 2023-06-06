@@ -35,5 +35,5 @@ if (*head != NULL)
 	tmp->next = new;
 }
 
-return (tmp);
+return (new);
 }
