@@ -25,25 +25,20 @@ if (index == 0)
 
 	*head = curr->next;
 	free(curr);
-	curr = NULL;
+	return (1);
 }
 else
 {
 while (index != 0)
 {
+	if (curr->next == NULL)
+	return (-1);
 	prev = curr;
 	curr = curr->next;
 	index--;
 }
-	if (index == 0)
-{
 	prev->next = curr->next;
 	free(curr);
-	curr = NULL;
-}
-else
-	return (-1);
-}
-
+	}
 return (1);
 }
