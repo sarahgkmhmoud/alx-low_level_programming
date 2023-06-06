@@ -28,12 +28,12 @@ if (*head != NULL)
 	{
 	tmp = tmp->next;
 	}
-	if (i < idx || tmp->next == NULL)
+	if (i < idx || tmp == NULL)
 		return (NULL);
 
 	new->next = tmp->next;
 	tmp->next = new;
 }
 
-return (new);
+return (tmp);
 }
