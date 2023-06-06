@@ -32,7 +32,7 @@ if (idx == 0 && tmp == NULL)
 	{
 	tmp = tmp->next;
 	}
-	if (i < idx)
+	if (i < idx || tmp == NULL)
 		return (NULL);
 
 	new->next = tmp->next;
