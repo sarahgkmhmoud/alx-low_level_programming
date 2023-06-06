@@ -26,7 +26,7 @@ if (idx == 0 && tmp == NULL)
 {
 	new->next = *head;
 	*head = new;
-	return (*head);
+	return (new);
 }
 	for (i = 1; i < idx && tmp != NULL; i++)
 	{
@@ -39,5 +39,5 @@ if (idx == 0 && tmp == NULL)
 	tmp->next = new;
 
 
-return (*head);
+return (new);
 }
