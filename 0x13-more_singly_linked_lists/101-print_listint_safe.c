@@ -14,8 +14,6 @@ size_t print_listint_safe(const listint_t *head)
 unsigned int count;
 const listint_t *pre, *post;
 
-pre = head;
-post = head->next;
 count = 0;
 
 if (head == NULL)
@@ -23,12 +21,12 @@ if (head == NULL)
 	exit(98);
 }
 
+pre = head;
+post = head->next;
+
 while (post !=  NULL && post < pre)
 {
 count++;
-if (pre == NULL || post == NULL)
-exit(98);
-
 printf("[%p] %i\n", (void *)pre, pre->n);
 pre = pre->next;
 post = post->next;
