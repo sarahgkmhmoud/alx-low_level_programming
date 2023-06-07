@@ -16,7 +16,7 @@ const listint_t *pre, *post;
 
 count = 0;
 
-if (head == NULL || head->next == NULL)
+if (head == NULL)
 {
 	return (0);
 }
@@ -27,8 +27,6 @@ post = head->next;
 while (post !=  NULL && post < pre)
 {
 count++;
-if (post == NULL)
-	return (0);
 printf("[%p] %i\n", (void *)pre, pre->n);
 pre = pre->next;
 post = post->next;
@@ -38,8 +36,6 @@ printf("[%p] %i\n", (void *)pre, pre->n);
 count++;
 if (post)
 	printf("-> [%p] %i\n", (void *)post, post->n);
-else
-return (0);
 
 return (count);
 }
