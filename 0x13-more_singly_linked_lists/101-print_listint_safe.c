@@ -27,6 +27,8 @@ post = head->next;
 while (post !=  NULL && post < pre)
 {
 count++;
+if (post == NULL)
+	return (0);
 printf("[%p] %i\n", (void *)pre, pre->n);
 pre = pre->next;
 post = post->next;
