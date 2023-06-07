@@ -20,7 +20,7 @@ count = 0;
 
 if (head == NULL)
 {
-	exit(98);
+	return (0);
 }
 
 while (post !=  NULL && post < pre)
