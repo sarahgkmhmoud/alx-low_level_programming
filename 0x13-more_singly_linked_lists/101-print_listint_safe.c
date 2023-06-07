@@ -26,12 +26,12 @@ if (head == NULL)
 while (post !=  NULL && post < pre)
 {
 count++;
-printf("[%p] %d\n", (void *)pre, pre->n);
+printf("[%p] %i\n", (void *)pre, pre->n);
 pre = pre->next;
 post = post->next;
 }
 
-printf("[%p] %d\n", (void *)pre, pre->n);
+printf("[%p] %i\n", (void *)pre, pre->n);
 count++;
 if (post != NULL)
 	printf("-> [%p] %i\n", (void *)post, post->n);
