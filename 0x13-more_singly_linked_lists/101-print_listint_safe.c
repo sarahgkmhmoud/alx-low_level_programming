@@ -34,7 +34,7 @@ post = post->next;
 
 printf("[%p] %i\n", (void *)pre, pre->n);
 count++;
-if (post != NULL)
+if (post)
 	printf("-> [%p] %i\n", (void *)post, post->n);
 return (count);
 }
