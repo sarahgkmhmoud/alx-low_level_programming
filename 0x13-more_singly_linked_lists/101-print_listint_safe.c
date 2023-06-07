@@ -16,7 +16,7 @@ const listint_t *pre, *post;
 
 count = 0;
 
-if (head == NULL)
+if (head == NULL || head->next == NULL)
 {
 	return (0);
 }
