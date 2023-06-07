@@ -20,20 +20,18 @@ count = 0;
 
 if (head == NULL)
 {
-	return (0);
+	exit(98);
 }
 
 while (post !=  NULL && post < pre)
 {
 count++;
-if (pre != NULL)
-{
+if (pre == NULL || post == NULL)
+exit(98);
+
 printf("[%p] %i\n", (void *)pre, pre->n);
 pre = pre->next;
 post = post->next;
-}
-else
-return (0);
 }
 
 printf("[%p] %i\n", (void *)pre, pre->n);
