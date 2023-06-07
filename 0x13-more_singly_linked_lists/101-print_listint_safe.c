@@ -38,5 +38,8 @@ printf("[%p] %i\n", (void *)pre, pre->n);
 count++;
 if (post)
 	printf("-> [%p] %i\n", (void *)post, post->n);
+else
+return (0);
+
 return (count);
 }
