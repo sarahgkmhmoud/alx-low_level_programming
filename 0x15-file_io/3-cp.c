@@ -1,4 +1,6 @@
 #include"main.h"
+char *_creatbuff(char *filename);
+void _close(int fd);
 /**
  *main - Entry Point
  *@argv: array of strings
@@ -13,7 +15,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-	dprintf(STDERR_FILENO, "Usage: cp %s %s", argv[1], argv[2]);
+	dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 	exit(97);
 	}
 
@@ -74,7 +76,7 @@ int main(int argc, char **argv)
 {
 	char *buff;
 
-	buff = malloc(sizeof(char *) * 1024);
+	buff = malloc(sizeof(char) * 1024);
 	if (buff == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", filename);
