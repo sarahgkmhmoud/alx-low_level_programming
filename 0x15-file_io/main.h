@@ -1,5 +1,5 @@
-#ifndef FILE_H
-#define FILE_H
+#ifndef MAIN_H
+#define MAIN_H
 #include <unistd.h>
 #include<stdio.h>
 #include<sys/types.h>
@@ -12,4 +12,4 @@ int append_text_to_file(const char *filename, char *text_content);
 int _putchar(char c);
 void _close(int fd);
 char * _creatbuff(char *filename);
-#endif/*file.h*/
+#endif/*main.h*/

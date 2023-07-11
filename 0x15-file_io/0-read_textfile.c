@@ -1,4 +1,4 @@
-#include"file.h"
+#include"main.h"
 /**
 *read_textfile - reads a text file and prints it.
 *@filename: pointer to point file name

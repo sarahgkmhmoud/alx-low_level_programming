@@ -1,4 +1,4 @@
-#include"file.h"
+#include"main.h"
 /**
  *main - Entry Point
  *@argv: array of strings
