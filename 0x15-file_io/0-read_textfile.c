@@ -1,32 +1,46 @@
-#include"main.h"
+#include"file.h"
 /**
- *read_textfile -  reads a text file and prints it.
- *@filename: name of file
- *@letters: number if letters
- *Return: 0 always succes
- */
+*read_textfile - reads a text file and prints it.
+*@filename: pointer to point file name
+*@letters: unsigned integers indicate to no. of letters in the file
+*Return: (writes) always success.
+*/
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buf;
+    /*Declaration*/
 	ssize_t fd;
-	ssize_t w;
-	ssize_t r;
 
-	fd = open(filename, O_RDONLY);
+	char *buff;
+	ssize_t reads, writes;
 
-	if (fd == -1)
+	/*allocate the buff on the heap*/
+	buff = malloc(sizeof(char) * letters);
+	if (buff == NULL)
 	{
 		return (0);
 	}
-
-	buf = malloc(sizeof(char) * letters);
-	if (buf == NULL)
+	/*open file - set the variable withpit double qoutes*/
+	fd = open(filename, O_RDONLY);
+	if (fd < 0)
+	{
+		perror("open");
 		return (0);
-
-	r = read(fd, buf, letters);
-	w = write(STDOUT_FILENO, buf, r);
-
-	free(buf);
+	}
+	/*read file*/
+	reads = read(fd, buff, letters);
+	if (reads > (ssize_t) letters)
+	{
+		perror("reads");
+		return (0);
+	}
+	/*print file*/
+	writes = write(STDOUT_FILENO, buff, reads);
+	if (writes > reads)
+	{
+		return (0);
+	}
 	close(fd);
-	return (w);
+	free(buff);
+	return (writes);
 }
+
