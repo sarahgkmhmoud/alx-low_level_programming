@@ -7,31 +7,26 @@
 */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    /*Declaration*/
 	ssize_t fd;
 
 	char *buff;
 	ssize_t reads, writes;
 
-	/*allocate the buff on the heap*/
 	buff = malloc(sizeof(char) * letters);
 	if (buff == NULL)
 	{
 		return (0);
 	}
-	/*open file - set the variable withpit double qoutes*/
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
 	{
 		return (0);
 	}
-	/*read file*/
 	reads = read(fd, buff, letters);
 	if (reads > (ssize_t) letters)
 	{
 		return (0);
 	}
-	/*print file*/
 	writes = write(STDOUT_FILENO, buff, reads);
 	if (writes > reads)
 	{
