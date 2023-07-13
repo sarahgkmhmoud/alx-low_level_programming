@@ -12,7 +12,7 @@ int writes;
 int len;
 
 	if (filename == NULL)
-		return (-1);
+		return (1);
 
 	if (text_content != NULL)
 	{
