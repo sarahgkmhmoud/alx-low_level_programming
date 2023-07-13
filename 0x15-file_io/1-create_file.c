@@ -25,7 +25,7 @@ int len;
 
 	if (fd == -1)
 	{
-		return(-1);
+		return(1);
 	}
 	if (writes == -1)
 	{
