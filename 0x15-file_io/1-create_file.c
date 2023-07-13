@@ -12,24 +12,24 @@ int writes;
 int len;
 
 	if (filename == NULL)
-		return (1);
+		return (-1);
 
+	fd = open(filename,  O_CREAT | O_RDONLY | O_TRUNC, 0600);
+	if (fd == -1)
+	{
+		return (-1);
+	}
 	if (text_content != NULL)
 	{
 		for (len = 0; text_content[len];)
 			len++;
 	}
 
-	fd = open(filename,  O_CREAT | O_RDONLY | O_TRUNC, 0600);
 	writes = write(fd, text_content, len);
 
-	if (fd == -1)
-	{
-		return(1);
-	}
 	if (writes == -1)
 	{
-		return(1);
+		return (-1);
 	}
 	close(fd);
 	return (1);
