@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 	do {
 		if (fd1 == -1 || r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from %s", argv[1]);
+		dprintf(STDERR_FILENO,"Error: Can't read from file %s", argv[1]);
 		free(buff);
 		exit(98);
 	}
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 
 		if (fd2 == -1 || w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s", argv[2]);
+			dprintf(STDERR_FILENO,"Error: Can't write to %s", argv[2]);
 			free(buff);
 			exit(99);
 		}
