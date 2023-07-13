@@ -11,6 +11,9 @@ int fd;
 int writes;
 int len;
 
+	len = 0;
+	writes = 0;
+
 	if (filename == NULL)
 		return (-1);
 
