@@ -22,9 +22,14 @@ int len;
 
 	fd = open(filename,  O_CREAT | O_RDONLY | O_TRUNC, 0600);
 	writes = write(fd, text_content, len);
-	if (fd == -1 || writes == -1)
+
+	if (fd == -1)
 	{
-		return (1);
+		return(-1);
+	}
+	if (writes == -1)
+	{
+		return(1);
 	}
 	close(fd);
 	return (1);
