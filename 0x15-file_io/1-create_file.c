@@ -21,18 +21,16 @@ int len;
 	}
 	if (text_content != NULL)
 	{
-		for (len = 0; text_content[len]; len++ )
+		for (len = 0; text_content[len]; len++)
 			continue;
-	
 
 	writes = write(fd, text_content, len);
-
+	}
 	if (writes == -1)
 	{
-		close(fd);
 		return (-1);
 	}
-	}
+
 	close(fd);
 	return (1);
 }
