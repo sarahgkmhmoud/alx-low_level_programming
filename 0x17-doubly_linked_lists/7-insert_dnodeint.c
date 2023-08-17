@@ -31,10 +31,7 @@ for (i = 1;  i < idx && curr != NULL; i++)
 }
 	new_node->prev = curr;
 	new_node->next = curr->next;
-	if (curr->next != NULL)
-{
 	curr->next->prev = new_node;
-}
 	curr->next = new_node;
 	return (new_node);
 }
