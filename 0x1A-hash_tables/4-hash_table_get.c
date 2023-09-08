@@ -8,6 +8,7 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index;
+	hash_node_t *checker_key;
 
 	if (ht == NULL || key == NULL)
 		return (NULL);
@@ -17,6 +18,17 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		return (NULL);
 	}
+	checker_key = ht->array[index];
+	while (checker_key)
+	{
+		if (strcmp(checker_key->key, key) == 0)
+		{
+		return (ht->array[index]->value);
+		}
+		checker_key = checker_key->next;
+	}
+
+
 	if (ht->array[index] == NULL)
 		return (NULL);
 
