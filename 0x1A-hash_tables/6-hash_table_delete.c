@@ -13,7 +13,7 @@ return;
 
 for (i = 0; i < ht->size; i++)
 {
-		temp = ht->array[i];
+	temp = ht->array[i];
 	while (temp != NULL)
 	{
 	nextNode = temp->next;
@@ -22,6 +22,7 @@ for (i = 0; i < ht->size; i++)
 	free(temp);
 	temp = nextNode;
 	}
+	free(temp);
 }
 free(ht->array);
 free(ht);
