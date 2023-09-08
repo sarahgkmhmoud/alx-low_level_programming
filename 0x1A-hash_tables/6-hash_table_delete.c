@@ -26,7 +26,7 @@ for (i = 0; i < ht->size; i++)
 	free(temp);
 	temp = movnode;
 	}
-	free(ht->array[i]);
-	free(ht);
 }
+free(ht->array);
+free(ht);
 }
