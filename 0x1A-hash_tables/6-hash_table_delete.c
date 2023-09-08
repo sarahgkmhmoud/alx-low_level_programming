@@ -22,7 +22,7 @@ for (i = 0; i < ht->size; i++)
 	free(temp->key);
 	if (temp->value != NULL)
 	free(temp->value);
-	if (temp != NULL)
+
 	free(temp);
 	temp = movnode;
 	}
