@@ -24,10 +24,8 @@ for (i = 0; i < ht->size; i++)
 	free(temp->value);
 	if (temp != NULL)
 	free(temp);
-	temp->size-1;
 	temp = movnode;
 	}
-	
 }
 free(ht->array);
 free(ht);
