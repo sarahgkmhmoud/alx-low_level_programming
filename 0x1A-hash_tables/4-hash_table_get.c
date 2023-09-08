@@ -23,7 +23,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	{
 		if (strcmp(checker_key->key, key) == 0)
 		{
-		return (ht->array[index]->value);
+		return (checker_key->value);
 		}
 		checker_key = checker_key->next;
 	}
