@@ -22,7 +22,6 @@ for (i = 0; i < ht->size; i++)
 	free(temp);
 	temp = nextNode;
 	}
-	free(temp);
 }
 free(ht->array);
 free(ht);
