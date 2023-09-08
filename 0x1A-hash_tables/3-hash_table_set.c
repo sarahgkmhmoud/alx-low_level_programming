@@ -36,11 +36,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 	current->next = ht->array[index];
 	ht->array[index] = current;
+	return (1);
 	}
-	else
-	{	
 	ht->array[index] = current;
 	ht->array[index]->next = NULL;
-	}
 	return (1);
 }
