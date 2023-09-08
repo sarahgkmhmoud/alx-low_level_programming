@@ -21,7 +21,7 @@ for (i = 0; i < ht->size; i++)
 	{
 		if (count > 0)
 		printf(", ");
-	printf("\'%s\': \'%s\'", ht->array[i]->key, ht->array[i]->value);
+	printf("\'%s\': \'%s\'", temp->key, temp->value);
 	temp = temp->next;
 	count++;
 	}
