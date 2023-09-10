@@ -79,11 +79,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 	
 
-	new_node = creat_nodes(key, value);
-	if (ht->array[index] == NULL)
-		ht->array[index] = new_node;
-	else
-	{
+	
 		while (array)
 	{
 		if (strcmp(array->key, key) == 0)
@@ -96,8 +92,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		array = array->next;
 	}
+		new_node = creat_nodes(key, value);
 		ht->array[index] = handledupindex(ht, key, index, new_node);
-	}
 if (handlesortlink(ht, key, index) != 1)
 {
 	/*free*/
@@ -113,7 +109,8 @@ if (handlesortlink(ht, key, index) != 1)
  *@new_node: insert new node
  *Return: shash_node_t always success
 */
-shash_node_t *handledupindex(shash_table_t *ht, const char *key, unsigned long int index, shash_node_t *new_node)
+shash_node_t *handledupindex(shash_table_t *ht, const char *key,
+unsigned long int index, shash_node_t *new_node)
 	{
 		 shash_node_t *current = ht->array[index];
 		shash_node_t *prev = NULL;
