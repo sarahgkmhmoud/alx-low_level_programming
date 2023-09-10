@@ -69,13 +69,27 @@ new_node = malloc(sizeof(shash_node_t));
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	shash_node_t *new_node;
+	shash_node_t *new_node, *array;
 
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
-	handlemultikeys(ht, key, value, index);
+	array = ht->array[index];
+
+	while (array)
+	{
+		if (strcmp(array->key, key) == 0)
+		{
+			free(array->value);
+		array->value = strdup(value);
+		if (array->value == NULL)
+			return (0);
+		return (1);
+		}
+		array = array->next;
+	}
+
 	new_node = creat_nodes(key, value);
 	if (ht->array[index] == NULL)
 		ht->array[index] = new_node;
@@ -287,24 +301,4 @@ void shash_table_delete(shash_table_t *ht)
 
 	free(ht->array);
 	free(ht);
-}
-
-
-int handlemultikeys(shash_table_t *ht, const char *key, const char *value,unsigned long int index)
-{
-	shash_node_t *array = ht->array[index];
-
-	while (array)
-	{
-		if (strcmp(array->key, key) == 0)
-		{
-			free(array->value);
-		array->value = strdup(value);
-		if (array->value == NULL)
-			return (0);
-		return (1);
-		}
-		array = array->next;
-	}
-	return (1);
 }
