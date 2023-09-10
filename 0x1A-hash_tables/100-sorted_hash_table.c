@@ -290,8 +290,7 @@ void shash_table_delete(shash_table_t *ht)
 }
 
 
-int handlemultikeys(shash_table_t *ht, const char *key,
-const char *value, unsigned long int index)
+int handlemultikeys(shash_table_t *ht, const char *key, const char *value,unsigned long int index)
 {
 	shash_node_t *array = ht->array[index];
 
