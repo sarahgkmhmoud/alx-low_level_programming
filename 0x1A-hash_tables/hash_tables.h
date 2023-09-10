@@ -85,4 +85,5 @@ shash_node_t *creat_nodes(const char *key, const char *value);
 shash_node_t *handledupindex(shash_table_t *ht, const char *key,
 unsigned long int index, shash_node_t *new_node);
 int handlesortlink(shash_table_t *ht, const char *ke, unsigned long int index);
+void add_to_sorted_list(shash_table_t *table, const char *key, shash_node_t *new_item);
 #endif /*hash_tables.h*/
