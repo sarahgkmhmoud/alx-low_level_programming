@@ -75,19 +75,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = key_index((const unsigned char *)key, ht->size);
+	handlemultikeys(ht, key, value, index);
 	new_node = creat_nodes(key, value);
 	if (ht->array[index] == NULL)
 		ht->array[index] = new_node;
 	else
-	{
-	if (handlemultikeys(ht, key, value, index) != 1)
 		ht->array[index] = handledupindex(ht, key, index, new_node);
-	else
-	{
-	new_node->next = ht->array[index];
-	ht->array[index] = new_node;
-	}
-	}
 
 if (handlesortlink(ht, key, index) != 1)
 {
@@ -316,4 +309,3 @@ const char *value, unsigned long int index)
 	}
 	return (1);
 }
-
