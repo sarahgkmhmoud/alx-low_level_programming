@@ -31,6 +31,7 @@ shash_table_t *shash_table_create(unsigned long int size)
  *creat_nodes - creat the node
  *@key: the key to insert
  *@value: the value to insert
+ *Return: newnode always sucsess
 */
 shash_node_t *creat_nodes(const char *key, const char *value)
 {
@@ -196,6 +197,8 @@ while (current)
 		}
 		checker_key = checker_key->next;
 	}
+		if (ht->array[index] == NULL)
+			return (NULL);
 		return (ht->array[index]->value);
 
 	current = current->next;
