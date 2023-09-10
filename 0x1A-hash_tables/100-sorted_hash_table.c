@@ -113,8 +113,7 @@ if (handlesortlink(ht, key, index) != 1)
  *@new_node: insert new node
  *Return: shash_node_t always success
 */
-shash_node_t *handledupindex(shash_table_t *ht, const char *key,
-unsigned long int index, shash_node_t *new_node)
+shash_node_t *handledupindex(shash_table_t *ht, const char *key, unsigned long int index, shash_node_t *new_node)
 	{
 		 shash_node_t *current = ht->array[index];
 		shash_node_t *prev = NULL;
