@@ -89,23 +89,14 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		array = array->next;
 	}
-		new_node = creat_nodes(key, value);
-		if (new_node == NULL)
+	
+	new_node = creat_nodes(key, value);
+	if (new_node == NULL)
 		return (0);
 
-	if (ht->array[index] == NULL)
-	{
-		/* No collision, insert as the first node */
-		ht->array[index] = new_node;
-	}
-	else
-	{
-		/* Collision, append to the end of the linked list */
-		shash_node_t *current = ht->array[index];
-		while (current->next != NULL)
-			current = current->next;
-		current->next = new_node;
-	}
+	/* Insert new node at the beginning of the linked list */
+	new_node->next = ht->array[index];
+	ht->array[index] = new_node;
 	/*	ht->array[index] = handledupindex(ht, key, index, new_node);*/
 if (handlesortlink(ht, key, index) != 1)
 {
