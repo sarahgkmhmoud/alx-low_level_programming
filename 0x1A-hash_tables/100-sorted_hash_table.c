@@ -1,4 +1,4 @@
-#include "hash_tables.h"
+#include"hash_tables.h"
 /**
  * shash_table_create - Creates a sorted hash table.
  * @size: The size of the hash table.
@@ -56,8 +56,6 @@ new_node = malloc(sizeof(shash_node_t));
 
 	return (NULL);
 	}
-	
-
 	return (new_node);
 }
 /**
@@ -71,78 +69,34 @@ new_node = malloc(sizeof(shash_node_t));
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	shash_node_t *new_node;
-    if (ht == NULL || key == NULL || value == NULL)
-        return 0;
+	shash_node_t *new_node, *array;
 
-    index = key_index((const unsigned char *)key, ht->size);
-    new_node = malloc(sizeof(shash_node_t));
-    if (new_node == NULL)
-        return 0;
+	if (ht == NULL || key == NULL || value == NULL)
+		return (0);
 
-    new_node->key = strdup(key);
-    new_node->value = strdup(value);
-    new_node->next = NULL;
+	index = key_index((const unsigned char *)key, ht->size);
+	array = ht->array[index];
 
-    if (ht->array[index] == NULL)
-    {
-        ht->array[index] = new_node;
-    }
-    else
-    {
-        shash_node_t *current = ht->array[index];
-        shash_node_t *prev = NULL;
-
-        while (current != NULL && strcmp(key, current->key) > 0)
-        {
-            prev = current;
-            current = current->next;
-        }
-
-        if (prev == NULL)
-        {
-            new_node->next = ht->array[index];
-            ht->array[index] = new_node;
-        }
-        else
-        {
-            prev->next = new_node;
-            new_node->next = current;
-        }
-    }
-
-    if (ht->shead == NULL)
-    {
-        ht->shead = new_node;
-        ht->stail = new_node;
-    }
-    else if (strcmp(key, ht->shead->key) < 0)
-    {
-        new_node->snext = ht->shead;
-        ht->shead->sprev = new_node;
-        ht->shead = new_node;
-    }
-    else if (strcmp(key, ht->stail->key) > 0)
-    {
-        new_node->sprev = ht->stail;
-        ht->stail->snext = new_node;
-        ht->stail = new_node;
-    }
-    else
-    {
-        shash_node_t *current = ht->shead->snext;
-        while (current != NULL && strcmp(key, current->key) > 0)
-        {
-            current = current->snext;
-        }
-
-        new_node->sprev = current->sprev;
-        new_node->snext = current;
-        current->sprev->snext = new_node;
-        current->sprev = new_node;
-    }
-
-    return 1;
+		while (array)
+	{
+		if (strcmp(array->key, key) == 0)
+		{
+			free(array->value);
+		array->value = strdup(value);
+		if (array->value == NULL)
+			return (0);
+		return (1);
+		}
+		array = array->next;
+	}
+		new_node = creat_nodes(key, value);
+		ht->array[index] = handledupindex(ht, key, index, new_node);
+if (handlesortlink(ht, key, index) != 1)
+{
+	/*free*/
+	return (0);
+}
+	return (1);
 }
 /**
  *handledupindex - handle the index
@@ -184,21 +138,25 @@ unsigned long int index, shash_node_t *new_node)
  *@index: index is integer
  *Return: 1 always success
 */
-int handlesortlink(shash_table_t *ht, const char *key, shash_node_t *new_node)
+int handlesortlink(shash_table_t *ht, const char *key, unsigned long int index)
 	{
 	  shash_node_t *current;
-
-	if (strcmp(key, ht->shead->key) < 0)
+	if (ht->shead == NULL)
 	{
-		new_node = ht->shead;
-		ht->shead->sprev = new_node;
-		ht->shead = new_node;
+		ht->shead = ht->array[index];
+		ht->stail = ht->array[index];
+	}
+	else if (strcmp(key, ht->shead->key) < 0)
+	{
+		ht->array[index]->snext = ht->shead;
+		ht->shead->sprev = ht->array[index];
+		ht->shead = ht->array[index];
 	}
 	else if (strcmp(key, ht->stail->key) > 0)
 		{
-		new_node->sprev = ht->stail;
-			ht->stail->snext = new_node;
-			ht->stail = new_node;
+		ht->array[index]->sprev = ht->stail;
+			ht->stail->snext = ht->array[index];
+			ht->stail = ht->array[index];
 		}
 	else
 	{
@@ -208,10 +166,10 @@ int handlesortlink(shash_table_t *ht, const char *key, shash_node_t *new_node)
 			current = current->snext;
 		}
 
-	   new_node->sprev = current->sprev;
-	   new_node->snext = current;
-		current->sprev->snext = new_node;
-		current->sprev = new_node;
+	   ht->array[index]->sprev = current->sprev;
+	   ht->array[index]->snext = current;
+		current->sprev->snext = ht->array[index];
+		current->sprev = ht->array[index];
 	}
 		return (1);
 	}
