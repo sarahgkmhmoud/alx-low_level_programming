@@ -89,7 +89,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		}
 		array = array->next;
 	}
-	
 	new_node = creat_nodes(key, value);
 	if (new_node == NULL)
 		return (0);
@@ -97,7 +96,6 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	/* Insert new node at the beginning of the linked list */
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
-	/*	ht->array[index] = handledupindex(ht, key, index, new_node);*/
 if (handlesortlink(ht, key, index) != 1)
 {
 	/*free*/
@@ -105,39 +103,6 @@ if (handlesortlink(ht, key, index) != 1)
 }
 	return (1);
 }
-/**
- *handledupindex - handle the index
- *@ht: hash table
- *@key: insert key
- *@index: integer the index
- *@new_node: insert new node
- *Return: shash_node_t always success
-*/
-shash_node_t *handledupindex(shash_table_t *ht, const char *key,
-unsigned long int index, shash_node_t *new_node)
-	{
-		 shash_node_t *current = ht->array[index];
-		shash_node_t *prev = NULL;
-
-
-		while (current != NULL && strcmp(key, current->key) > 0)
-		{
-			prev = current;
-			current = current->next;
-		}
-
-		if (prev == NULL)
-		{
-			new_node->next = ht->array[index];
-			ht->array[index] = new_node;
-		}
-		else
-		{
-			prev->next = new_node;
-			new_node->next = current;
-		}
-		return (ht->array[index]);
-	}
 /**
  *handlesortlink - handle the sort link
  *@ht: hash table
