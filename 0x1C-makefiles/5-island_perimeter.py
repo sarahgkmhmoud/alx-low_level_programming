@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """technical interview"""
 
+
 def island_perimeter(grid):
     """   width_list = []
     height = 0
@@ -21,8 +22,7 @@ def island_perimeter(grid):
     width_list = []
     height = 0
     if len(grid) > 100 or any(len(row) > 100 for row in grid):
-        raise ValueError("Grid dimensions exceed the maximum allowed (100x100).")
-
+        return
     for list in grid:
         width_calc = sum(list)
         width_list.append(width_calc)
