@@ -3,6 +3,7 @@
 
 
 def island_perimeter(grid):
+    
     """   width_list = []
     height = 0
     for list in grid:
@@ -19,16 +20,18 @@ def island_perimeter(grid):
 
     return perimeter
 """
-    width_list = []
-    height = 0
-    if len(grid) > 100 or any(len(row) > 100 for row in grid):
-        return
-    for list in grid:
-        width_calc = sum(list)
-        width_list.append(width_calc)
-        if width_calc:
-            height += 1
-    width = max(width_list)
-    perimeter = (width + height) * 2
+    size = 0
+    edges = 0
+    for height in range(len(grid)):
+        for width in range(len(grid[0])):
+            if grid[height][width] == 1:
+                size += 1
+                edges += 4
+                if width > 0 and grid[height][width-1]== 1:
+                        edges -=2
+                if height > 0 and grid[height - 1][width] == 1:
+                        edges -=2 
+    return edges
+	
 
-    return perimeter
+ 
