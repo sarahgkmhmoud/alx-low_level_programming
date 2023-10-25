@@ -4,8 +4,9 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 CFLAGS = -Wall -Werror -Wextra -pedantic
-all: $(I)
-	$(CC) $(CFLAGS)   -o $(NAME)
+all: $(NAME)
+$(NAME):$(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 clean:
 	$(RM) *~ $(NAME)
 oclean:
