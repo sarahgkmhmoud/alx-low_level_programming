@@ -6,3 +6,4 @@ NAME = school
 all: $(NAME)
 $(NAME):$(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
+
