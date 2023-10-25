@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""technical interview"""
 
 def island_perimeter(grid):
     """   width_list = []
