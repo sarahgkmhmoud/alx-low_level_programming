@@ -22,7 +22,7 @@ size_t find_min(size_t a, size_t b)
 */
 int jump_search(int *array, size_t size, int value)
 {
-	if (array)
+	if (array && size)
 	{
 	size_t jump, prev;
 
