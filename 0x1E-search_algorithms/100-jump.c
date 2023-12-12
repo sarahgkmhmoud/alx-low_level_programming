@@ -22,6 +22,8 @@ size_t find_min(size_t a, size_t b)
 */
 int jump_search(int *array, size_t size, int value)
 {
+	if (array)
+	{
 	size_t jump, prev;
 
 	prev = 0;
@@ -48,6 +50,7 @@ int jump_search(int *array, size_t size, int value)
 	{
 		printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
 		return (prev);
+	}
 	}
 	return (-1);
 }
