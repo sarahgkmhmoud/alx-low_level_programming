@@ -28,14 +28,14 @@ int jump_search(int *array, size_t size, int value)
 
 	prev = 0;
 	jump = sqrt(size);
-	while (array[find_min(jump, size)] < value)
+	while (array[find_min(jump, (size - 1))] < value)
 	{
 		printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
 
 		prev = jump;
 		jump += sqrt(size);
-		if (prev >= size)
-			return (-1);
+		if (prev == (size - 1))
+			break;
 	}
 	printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
 
