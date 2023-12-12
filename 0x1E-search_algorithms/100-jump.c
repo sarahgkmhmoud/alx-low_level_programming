@@ -9,7 +9,7 @@ size_t find_min(size_t a, size_t b);
 */
 size_t find_min(size_t a, size_t b)
 {
-	if (a < b)
+	if (b > a)
 		return (a);
 	return (b);
 }
@@ -28,14 +28,14 @@ int jump_search(int *array, size_t size, int value)
 
 	prev = 0;
 	jump = sqrt(size);
-	while (array[find_min(jump, (size - 1))] < value)
+	while (array[find_min(jump, size)] < value)
 	{
 		printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
 
 		prev = jump;
 		jump += sqrt(size);
-		if (prev == (size - 1))
-			break;
+		if (prev >= size)
+			return -1;
 	}
 	printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
 
