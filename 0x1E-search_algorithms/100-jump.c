@@ -1,13 +1,13 @@
 #include "search_algos.h"
 #include <math.h>
-size_t find_min(size_t a, size_t b);
+int find_min(int a, int b);
 /**
  *find_min - find min
  *@a: a
  *@b: b
  *Return: int
 */
-size_t find_min(size_t a, size_t b)
+int find_min(int a, int b)
 {
 	if (b > a)
 		return (a);
@@ -24,31 +24,31 @@ int jump_search(int *array, size_t size, int value)
 {
 	if (array && size)
 	{
-	size_t jump, prev;
+	int jump, prev;
 
 	prev = 0;
-	jump = sqrt(size);
+	jump = sqrt((int)size);
 	while (array[find_min(jump, size)] < value)
 	{
-		printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
+		printf("Value checked array[%i] = [%i]\n", prev, array[prev]);
 
 		prev = jump;
 		jump += sqrt(size);
-		if (prev >= size)
+		if (prev >= (int)size)
 			return -1;
 	}
-	printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
+	printf("Value checked array[%i] = [%i]\n", prev, array[prev]);
 
-	printf("Value found between indexes [%lu] and [%lu]\n", prev, jump);
+	printf("Value found between indexes [%i] and [%i]\n", prev, jump);
 
 	while (array[prev] < value)
 	{
-		printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
+		printf("Value checked array[%i] = [%i]\n", prev, array[prev]);
 		prev++;
 	}
 	if (array[prev] == value)
 	{
-		printf("Value checked array[%lu] = [%i]\n", prev, array[prev]);
+		printf("Value checked array[%i] = [%i]\n", prev, array[prev]);
 		return (prev);
 	}
 	}
